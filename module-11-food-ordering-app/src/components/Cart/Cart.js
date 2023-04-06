@@ -8,13 +8,18 @@ const Cart = props => {
     const cartCtx = useContext(CartContext);
     const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     const hasItems = cartCtx.items.length > 0;
-    const cartItemRemoveHandler = id => {};
-    const cartItemAddHandler = item => {};
+    const cartItemRemoveHandler = id => {
+        console.log("entry");
+        cartCtx.removeItem(id);
+    };
+    const cartItemAddHandler = item => {
+        cartCtx.addItem({ ...item, amount: 1 });
+    };
     const cartitems = // used classes['cart-items'] because using hyphen '-' is prohibited in css module, so you can access it in this way
         <ul className={classes['cart-items']}>
             {
                 cartCtx.items.map((item) =>
-                    <CartItem key={item.id} name={item.name} amount={item.amount} price={item.price} onRemove={cartItemRemoveHandler.bind(null, item.id)} onAdd={cartItemAddHandler(null, item)} />
+                    <CartItem key={item.id} name={item.name} amount={item.amount} price={item.price} onRemove={cartItemRemoveHandler.bind(null, item.id)} onAdd={cartItemAddHandler.bind(null, item)} />
                 )
             }
         </ul>
