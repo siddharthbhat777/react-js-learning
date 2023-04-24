@@ -1,0 +1,4 @@
+Problem Definition:
+1. As you can see in this app, that when we click on the button, all of the child components gets re-rendered.
+2. Even after passing a static prop i.e. no change in the state of component, still it gets re-rendered with other child components.
+3. So re-rendering all child components is unnecessary as well as it aftect app performance.
