@@ -13,7 +13,12 @@ Solution creates another problem:
 Then what must me done:
 You will only use memo when you have many props or have many child components. Else, there won't be any need to use memo.
 
-Another point to be noted about memo:
+Another problem to be noted about memo:
 1. Memo is a component made with JavaScript so it just uses this '===' operator to compare props. 
 2. So it only able to compare primitive data type of props (as it is a property of plain JavaScript) which you can see in the Screenshot.
 3. So, if the prop is not in a primitive datatype, it considers that prop as a different data and re-render that particular component.
+
+Solution of problem:
+1. So as to compare the non-primitive datatypes like object, array, function, etc. we will use 'useCallback()' hook.
+2. What this hook will do is assign the value of previous value to current if certain conditions are met.
+3. And how it does that is shown properly in screenshots.
