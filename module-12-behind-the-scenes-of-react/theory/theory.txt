@@ -16,3 +16,4 @@ You will only use memo when you have many props or have many child components. E
 Another point to be noted about memo:
 1. Memo is a component made with JavaScript so it just uses this '===' operator to compare props. 
 2. So it only able to compare primitive data type of props (as it is a property of plain JavaScript) which you can see in the Screenshot.
+3. So, if the prop is not in a primitive datatype, it considers that prop as a different data and re-render that particular component.
