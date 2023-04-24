@@ -1,0 +1,18 @@
+Problem Definition:
+1. As you can see in this app, that when we click on the button, all of the child components gets re-rendered.
+2. Even after passing a static prop i.e. no change in the state of component, still it gets re-rendered with other child components.
+3. So re-rendering all child components is unnecessary as well as it aftect app performance.
+
+Solution:
+Wrap the export statement your desired component with 'React.memo(component);'
+
+Solution creates another problem:
+1. So React.memo helps you to stop re-rendering a component but it also takes some computation power to compare those props.
+2. So in short, to optimise your app you try to stop re-rendering but the resources are also consumed by memo.
+
+Then what must me done:
+You will only use memo when you have many props or have many child components. Else, there won't be any need to use memo.
+
+Another point to be noted about memo:
+1. Memo is a component made with JavaScript so it just uses this '===' operator to compare props. 
+2. So it only able to compare primitive data type of props (as it is a property of plain JavaScript) which you can see in the Screenshot.
