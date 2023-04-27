@@ -1,13 +1,13 @@
-import { Component, useState } from 'react';
+import { Component/* , useState */ } from 'react';
 import User from './User';
 
 import classes from './Users.module.css';
 
-const DUMMY_USERS = [
-  { id: 'u1', name: 'Siddharth' },
-  { id: 'u2', name: 'Harshad' },
-  { id: 'u3', name: 'Aniruddha' },
-];
+// const DUMMY_USERS = [
+//   { id: 'u1', name: 'Siddharth' },
+//   { id: 'u2', name: 'Harshad' },
+//   { id: 'u3', name: 'Aniruddha' },
+// ];
 
 class Users extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class Users extends Component {
     // can add helper constants in render method
     const usersList = (
       <ul>
-        {DUMMY_USERS.map((user) => (
+        {this.props.users.map((user) => (
           <User key={user.id} name={user.name} />
         ))}
       </ul>
